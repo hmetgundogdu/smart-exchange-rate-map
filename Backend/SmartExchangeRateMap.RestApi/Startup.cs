@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace SmartExchangeRateMap.RestApi
         {
 
             services.AddControllers();
+            services.AddMediatR(typeof(Application.Handlers.TestHandler).Assembly);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartExchangeRateMap.RestApi", Version = "v1" });
