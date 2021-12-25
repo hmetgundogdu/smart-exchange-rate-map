@@ -21,9 +21,9 @@ namespace SmartExchangeRateMap.RestApi.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAllWorldAsync([FromQuery]TestCommand testCommand)
+        public async Task<IActionResult> GetAllWorldAsync([FromQuery]ExchangeOneToManyCommand command)
         {
-            var response = await _mediator.Send(testCommand);
+            var response = await _mediator.Send(command);
             return CreateActionResultInstance(response);
         }
     }

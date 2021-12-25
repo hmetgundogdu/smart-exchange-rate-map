@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace SmartExchangeRateMap.Application.Commands
 {
-    public class ExchangeBeToManyCommand : IRequest<Response<ExchangeBeToManyDto>>
+    public class ExchangeOneToManyCommand : IRequest<Response<ExchangeOneToManyDto>>
     {
-        public string BaseUnit { get; set; }
+        public string BaseUnit { get; set; } = "TRY";
     }
 }

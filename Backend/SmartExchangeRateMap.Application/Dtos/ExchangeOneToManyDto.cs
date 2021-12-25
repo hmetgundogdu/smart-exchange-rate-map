@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace SmartExchangeRateMap.Application.Dtos
 {
-    public class ExchangeBeToManyDto
+    public class ExchangeOneToManyDto
     {
         public string BaseUnit { get; set; }
-        public DateTime LastUpdate { get; set; }
-        public List<WorldUnits> Others { get; set; }
-        public class WorldUnits
+        public List<WorldUnit> Others { get; set; }
+        public class WorldUnit
         {
             public string CountryCode { get; set; }
             public string CountryName { get; set; }
