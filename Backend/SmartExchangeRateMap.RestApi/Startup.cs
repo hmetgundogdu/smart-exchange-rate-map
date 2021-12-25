@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SmartExchangeRateMap.Application.OurService;
+using SmartExchangeRateMap.Application.OurService.Interface;
+using SmartExchangeRateMap.Application.OurService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +33,7 @@ namespace SmartExchangeRateMap.RestApi
 
             services.AddControllers();
             services.AddMediatR(typeof(Application.Handlers.TestHandler).Assembly);
+            services.AddTransient<IExchangeCurrencyOurService<FreeCurrencyApiResult>, FreeCurrencyService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartExchangeRateMap.RestApi", Version = "v1" });
